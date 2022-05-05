@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+  background-color: aqua;
+  margin-top: auto;
+  padding: 0;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomNavbar {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'BebasNeue-Regular';
+  font-size: 22px;
+  padding-top: 11px;
+}

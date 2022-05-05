@@ -1,0 +1,8 @@
+.structure {
+  height: 100vh;
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+
+  flex-direction: column;
+}

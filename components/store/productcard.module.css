@@ -1,0 +1,16 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  border: 2px solid black;
+}
+
+.productCard span {
+  margin: 0 auto;
+}
+
+.productPicture {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
