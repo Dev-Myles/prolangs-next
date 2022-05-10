@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 2px solid var(--fontColor);
+  font-family: 'BebasNeue-Regular';
+  font-size: 22px;
+  padding: 0;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images.active {
+  color: blue;
+}
+
+.navbarSectionLeft,
+.navbarSectionRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.navbarSectionRightWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbarSection {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbarSectionLeft {
+  width: 20%;
+}
+
+.navbarSectionRight {
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.navbarSectionCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.isSelected {
+  color: blueviolet;
+}

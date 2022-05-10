@@ -8,6 +8,8 @@ function reducer(state, action) {
   switch (action.type) {
     case 'SHIRTS':
       return { products: (state.products = 'SHIRTS') };
+    case 'SIGNS':
+      return { products: (state.products = 'SIGNS') };
     case 'HITCHES':
       return { products: (state.products = 'HITCHES') };
     default:
@@ -22,6 +24,7 @@ export default function StoreLayout() {
     <div className={styles.layout}>
       <div className={styles.buttons}>
         <div onClick={() => setProducts({ type: 'SHIRTS' })}>Shirts</div>
+        <div onClick={() => setProducts({ type: 'SIGNS' })}>Signs</div>
         <div onClick={() => setProducts({ type: 'HITCHES' })}>Hitches</div>
       </div>
       <div className={styles.productsBody}>

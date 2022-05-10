@@ -13,7 +13,7 @@ export default function Footer() {
         <Link href="https://www.instagram.com/rock_bottom_guild/">
           <a className={styles.images}>
             <Image
-              src="/icons/insta-color.svg"
+              src="/icons/insta1.svg"
               alt="instagram icon"
               height="32"
               width="32"
