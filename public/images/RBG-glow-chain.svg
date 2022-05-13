@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="485.72116mm"
-   height="315.90918mm"
-   viewBox="0 0 485.72116 315.90918"
+   width="347.95844mm"
+   height="199.52557mm"
+   viewBox="0 0 347.95843 199.52557"
    version="1.1"
    id="svg858"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
@@ -28,8 +28,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="0.30110831"
-     inkscape:cx="561.25984"
-     inkscape:cy="440.041"
+     inkscape:cx="197.60331"
+     inkscape:cy="297.23524"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -39,17 +39,17 @@
   <defs
      id="defs855">
     <filter
-       y="-0.15845712"
-       height="1.3160778"
+       y="-0.073182211"
+       height="1.145528"
        inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
        inkscape:menu="Shadows and Glows"
        inkscape:label="Dark and Glow"
        style="color-interpolation-filters:sRGB"
        id="filter1418"
-       x="-0.08528625"
-       width="1.1708461">
+       x="-0.039068549"
+       width="1.0784107">
       <feGaussianBlur
-         stdDeviation="5"
+         stdDeviation="2.2569662921348312"
          result="result6"
          id="feGaussianBlur1408" />
       <feComposite
@@ -190,7 +190,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(136.67434,22.622641)">
+     transform="translate(64.921594,-15.334254)">
     <g
        id="g9437"
        transform="matrix(1.0696178,0,0,1.1354845,419.22742,-384.85777)"

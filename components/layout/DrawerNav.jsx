@@ -1,116 +1,68 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { IconContext } from 'react-icons';
+import { AiOutlineClose, AiOutlineShoppingCart } from 'react-icons/ai';
+import { BiMessageRoundedEdit } from 'react-icons/bi';
+import { BsBag, BsInstagram } from 'react-icons/bs';
+import { FaScroll } from 'react-icons/fa';
 import styles from './drawernav.module.css';
 
 export default function DrawerNav(props) {
   function navChange() {
     props.onClick();
   }
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+  }, []);
   return (
     <div className={styles.drawerBody}>
-      <div>
-        <Link href="/store">
-          <a>
-            Store{' '}
-            <Image
-              src="/icons/cart.svg"
-              layout="fixed"
-              alt="store icon"
-              width={32}
-              height={32}
-            />
-          </a>
-        </Link>
-        <ul>
-          <li>
-            <div onClick={navChange}>
-              <Link href="/store">
-                <a>
-                  Shirts{' '}
-                  <Image
-                    src="/icons/cart.svg"
-                    layout="fixed"
-                    alt="shirts icon"
-                    width={32}
-                    height={32}
-                  />
-                </a>
-              </Link>
-            </div>
-          </li>
-          <li>
-            <div onClick={navChange}>
-              <Link href="/store">
-                <a>
-                  Hitches{' '}
-                  <Image
-                    src="/icons/cart.svg"
-                    layout="fixed"
-                    alt="hitches icon"
-                    width={32}
-                    height={32}
-                  />
-                </a>
-              </Link>
-            </div>
-          </li>
-          <li>
-            <div onClick={navChange}>
-              <Link href="/store">
-                <a>
-                  Signs{' '}
-                  <Image
-                    src="/icons/cart.svg"
-                    layout="fixed"
-                    alt="sign icon"
-                    width={32}
-                    height={32}
-                  />
-                </a>
-              </Link>
-            </div>
-          </li>
-        </ul>
+      <div className={styles.closeDrawerbtn} onClick={navChange}>
+        <Image
+          src="/icons/RBG-logo.svg"
+          alt="RBG logo"
+          layout="fixed"
+          width={70}
+          height={70}
+        />
+        <IconContext.Provider value={{ size: '1em' }}>
+          <AiOutlineClose />
+        </IconContext.Provider>
       </div>
       <div onClick={navChange}>
-        <Link href="/">
+        <Link href="/store">
           <a>
-            Instagram{' '}
-            <Image
-              src="/icons/insta1.svg"
-              layout="fixed"
-              alt="insta icon"
-              width={32}
-              height={32}
-            />
+            Store <BsBag />
+          </a>
+        </Link>
+      </div>
+      <div onClick={navChange}>
+        <Link href="/cart">
+          <a>
+            Cart <AiOutlineShoppingCart />
+          </a>
+        </Link>
+      </div>
+      <div onClick={navChange}>
+        <Link href="https://www.instagram.com/rock_bottom_guild/">
+          <a>
+            Instagram <BsInstagram />
           </a>
         </Link>
       </div>
       <div onClick={navChange}>
         <Link href="/contact">
           <a>
-            Contact{' '}
-            <Image
-              src="/icons/cart.svg"
-              layout="fixed"
-              alt="contact icon"
-              width={32}
-              height={32}
-            />
+            Contact
+            <BiMessageRoundedEdit />
           </a>
         </Link>
       </div>
       <div onClick={navChange}>
         <Link href="/policy">
           <a>
-            Policy{' '}
-            <Image
-              src="/icons/cart.svg"
-              layout="fixed"
-              alt="policy icon"
-              width={32}
-              height={32}
-            />
+            Policy <FaScroll />
           </a>
         </Link>
       </div>

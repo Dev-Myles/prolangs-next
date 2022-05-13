@@ -1,4 +1,100 @@
 .gallerySection {
-  background-color: green;
   height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryImage {
+  margin: 20px;
+  padding: 20px;
+
+  background-color: black;
+}
+
+.mobileGalleryImage {
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 0 7px green;
+  border-radius: 7px;
+  background-color: hsla(0, 0%, 3%, 1);
+}
+
+.bannerMessageSection {
+  margin: 0rem 0 0rem 0;
+}
+
+.bannerMessageSectionButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.bannerMessageSectionButtonWrap {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+}
+
+.bannerButtons {
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+  padding: 5px 50px 5px 50px;
+  display: flex;
+  justify-content: center;
+
+  box-shadow: 0px 0 7px white;
+  font-family: 'BebasNeue-Regular';
+}
+
+.mobileGalleryLinkNames {
+  font-family: 'BebasNeue-Regular';
+  font-size: 40px;
+}
+
+.galleryMessageSection div {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.galleryMessageSectionDesktop {
+  display: flex;
+  align-items: center;
+}
+
+.galleryMessageSectionDesktop div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 70%;
+}
+
+.bannerButtonsDesktop {
+  font-size: 55px;
+
+  padding: 5px 100px 5px 100px;
+  display: flex;
+  justify-content: center;
+
+  box-shadow: 0px 0 7px white;
+  font-family: 'BebasNeue-Regular';
+}
+
+.mobileGalleryLinkNamesDesktop {
+  font-family: 'BebasNeue-Regular';
+  font-size: 75px;
+  border-left: 10px solid white;
+  padding-left: 30px;
+}
+
+.mobileGalleryHeader {
+  font-size: 50px;
+  font-family: 'BebasNeue-Regular';
+  text-align: center;
 }

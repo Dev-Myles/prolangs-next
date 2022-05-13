@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { IconContext } from 'react-icons';
+import { AiOutlineMenu, AiOutlineShoppingCart } from 'react-icons/ai';
 import DrawerNav from './DrawerNav';
 import styles from './mobilenavbar.module.css';
 
@@ -9,6 +11,7 @@ export default function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   function navChange() {
+    document.body.style.overflow = 'initial';
     setIsOpen(false);
   }
 
@@ -20,22 +23,20 @@ export default function MobileNavbar() {
     <div>
       {isOpen ? (
         <div>
-          <button onClick={() => navChange()}>X</button>
           <DrawerNav onClick={navChange} />
         </div>
       ) : null}
       <div className={styles.navbar}>
         <div className={styles.navbarSection}>
           <div className={styles.navbarSectionLeft}>
-            <button onClick={() => setIsOpen(true)}>
-              <Image
-                src="/icons/menu.svg"
-                alt="RBG logo"
-                layout="fixed"
-                width={32}
-                height={32}
-              />
-            </button>
+            <IconContext.Provider value={{ className: 'images' }}>
+              <div
+                className={styles.iconCenter}
+                onClick={() => setIsOpen(true)}
+              >
+                <AiOutlineMenu />
+              </div>
+            </IconContext.Provider>
           </div>
         </div>
 
@@ -64,12 +65,14 @@ export default function MobileNavbar() {
                   className={styles.images}
                   onClick={() => setIsOpen(false)}
                 >
-                  <Image
-                    src="/icons/cart.svg"
-                    alt="cart icon"
-                    height={32}
-                    width={32}
-                  />
+                  <IconContext.Provider value={{ className: 'images' }}>
+                    <div
+                      className={styles.iconCenter}
+                      onClick={() => setIsOpen(true)}
+                    >
+                      <AiOutlineShoppingCart />
+                    </div>
+                  </IconContext.Provider>
                 </a>
               </Link>
             </div>

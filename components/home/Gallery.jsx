@@ -1,9 +1,22 @@
-import styles from './gallery.module.css';
+import React, { useLayoutEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import DesktopGallery from './DesktopGallery';
+import MobileGallery from './MobileGallery';
+
+const hasWindow = () => {
+  return typeof window !== 'undefined';
+};
 
 export default function Gallery() {
-  return (
-    <div className={styles.gallerySection}>
-      <h1>Working</h1>
-    </div>
-  );
+  if (typeof document === 'undefined') {
+    React.useLayoutEffect = React.useEffect;
+  }
+  const [isMobile, setIsMobile] = useState(false);
+  const mobileDevice = useMediaQuery({ maxWidth: 999 });
+
+  useLayoutEffect(() => {
+    return mobileDevice && hasWindow ? setIsMobile(true) : setIsMobile(false);
+  }, [mobileDevice]);
+
+  return <>{isMobile ? <MobileGallery /> : <DesktopGallery />}</>;
 }

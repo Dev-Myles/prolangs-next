@@ -19,6 +19,10 @@
   color: blue;
 }
 
+.iconCenter:hover {
+  cursor: pointer;
+}
+
 .navbarSectionLeft,
 .navbarSectionRight {
   display: flex;
@@ -41,6 +45,9 @@
 
 .navbarSectionLeft {
   width: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
 }
 
 .navbarSectionRight {
@@ -56,4 +63,9 @@
 
 .isSelected {
   color: blueviolet;
+}
+
+.iconCenter {
+  display: flex;
+  align-items: center;
 }

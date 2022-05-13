@@ -1,15 +1,22 @@
-import Image from 'next/image';
-import styles from './banner.module.css';
+import React, { useLayoutEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import DesktopBanner from './DesktopBanner';
+import MobileBanner from './MobileBanner';
+
+const hasWindow = () => {
+  return typeof window !== 'undefined';
+};
 
 export default function Banner() {
-  return (
-    <div className={styles.bannerSection}>
-      <Image
-        src="/images/RBG-glow-chain.svg"
-        alt="RBG banner"
-        width="1400vw"
-        height="750"
-      />
-    </div>
-  );
+  if (typeof document === 'undefined') {
+    React.useLayoutEffect = React.useEffect;
+  }
+  const [isMobile, setIsMobile] = useState(false);
+  const mobileDevice = useMediaQuery({ maxWidth: 999 });
+
+  useLayoutEffect(() => {
+    return mobileDevice && hasWindow ? setIsMobile(true) : setIsMobile(false);
+  }, [mobileDevice]);
+
+  return <>{isMobile ? <MobileBanner /> : <DesktopBanner />}</>;
 }

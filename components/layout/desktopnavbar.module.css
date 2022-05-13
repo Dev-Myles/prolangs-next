@@ -19,6 +19,10 @@
   color: blue;
 }
 
+.iconCenter:hover {
+  cursor: pointer;
+}
+
 .navbarSectionLeft,
 .navbarSectionRight {
   display: flex;

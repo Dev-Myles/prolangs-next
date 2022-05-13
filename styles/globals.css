@@ -7,6 +7,7 @@ body {
   background-color: black;
   min-height: 100vh;
   color: var(--fontColor);
+  overflow-x: hidden;
 }
 
 :root {
@@ -22,6 +23,16 @@ html {
 @font-face {
   font-family: 'BebasNeue-Regular';
   src: url('../public/fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Teko-Light';
+  src: url('../public/fonts/Teko-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('../public/fonts/Lato-Regular.ttf');
 }
 
 a {

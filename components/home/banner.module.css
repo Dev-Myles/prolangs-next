@@ -1,4 +1,23 @@
 .bannerSection {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  font-family: 'BebasNeue-Regular';
+  padding-bottom: 2rem;
+}
+
+.bannerSectionTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid white;
+}
+
+.bannerSectionTop div {
+  display: flex;
+}
+
+.bannerMessage {
+  font-size: 150px;
+  margin: 0 auto;
 }
