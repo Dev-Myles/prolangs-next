@@ -1,0 +1,20 @@
+.flashMessage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+}
+
+.xButton {
+  background: inherit;
+  border: none;
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+}
+
+.xButton:hover {
+  cursor: pointer;
+}

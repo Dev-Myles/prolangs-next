@@ -1,33 +1,60 @@
-.formWrap {
-  margin: 0 auto;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .form {
-  border: 1px solid white;
   display: flex;
-  width: 50%;
-  height: 50vh;
+  width: fit-content;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+  color: var(--fontColor);
+}
+
+.formBodyWrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.howToUsePara {
+  width: 48ch;
+  font-size: 25px;
+  font-family: 'Lato-Regular';
+}
+
+.formBodyWrap h2 {
+  font-family: 'BebasNeue-Regular';
+  margin-bottom: 0;
+}
+
+.formBodyWrap hr {
+  width: 100%;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.form label {
+  font-size: 25px;
+  font-family: 'BebasNeue-Regular';
 }
 
 .form input,
 .messageInput,
 .errorMessage {
   font-size: 22px;
-  margin: 0 auto;
+}
+
+.form input:focus,
+.messageInput:focus {
+  outline: 1px solid green;
 }
 
 .textInput,
 .emailInput,
 .messageInput,
 .errorMessage {
-  width: 80%;
+  width: 33vw;
+  font-family: 'Lato-Regular';
 }
 
 .messageInput {
@@ -36,24 +63,62 @@
   height: 30vh;
 }
 
+.inputWrap {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  background-color: black;
+  border: 1px solid white;
+  color: var(--fontColor);
+  padding: 10px;
+  border-radius: 7px;
+  transition: ease-in-out 0.3s;
+  font-family: 'BebasNeue-Regular';
+  margin: 0 auto;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 7px white;
+}
+
+.errorMessage {
+  color: #d0342c;
+}
+
+.imageWrap {
+  margin: 0 auto;
+  width: fit-content;
+}
+
 @media only screen and (max-width: 999px) {
+  .form {
+    width: 100%;
+    height: fit-content;
+    border: none;
+  }
+
+  .formBodyWrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
   .textInput,
   .emailInput,
   .messageInput,
   .errorMessage {
-    width: 92vw;
+    width: 100%;
   }
 
-  .form {
-    width: 100vw;
-    height: 100%;
-    border: none;
-  }
-  .formWrap {
-    margin: 0 auto;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-
-    height: 80vh;
+  .howToUsePara {
+    width: 22ch;
+    font-size: 25px;
+    font-family: 'Lato-Regular';
   }
 }

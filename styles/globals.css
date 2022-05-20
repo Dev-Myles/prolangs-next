@@ -12,9 +12,12 @@ body {
 
 :root {
   --background: #000000;
-
+  --success: #dff2bf;
+  --error: #ffd2d2;
   --fontColor: #e0e0e0;
   --darkPrimary: #222222;
+  --success-text: #4f8a10;
+  --error-text: #d8000c;
 }
 html {
   scroll-behavior: smooth;

@@ -67,6 +67,7 @@ export default function DesktopNavbar() {
               <Link href="/contact">
                 <a className={styles.images}>
                   <Image
+                    style={router.pathname == '/contact' ? active : null}
                     src="/icons/pen.svg"
                     alt="contact icon"
                     height={32}
