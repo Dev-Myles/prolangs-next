@@ -6,7 +6,8 @@ import styles from './desktopnavbar.module.css';
 export default function DesktopNavbar() {
   const router = useRouter();
   const active = {
-    backgroundColor: 'purple',
+    boxShadow: '0 0 15px green',
+    backgroundColor: 'green',
   };
   return (
     <div>

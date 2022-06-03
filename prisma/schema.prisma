@@ -1,0 +1,44 @@
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Shirt {
+  id        String     @default(cuid()) @id
+  price Int
+  imageUrl String
+  name String @unique @db.VarChar(40)
+  sizes String[]
+  colors String[]
+  description String@db.VarChar(300)
+  fabric String @db.VarChar(60)
+  available  Int @db.Integer
+}
+
+model Sign {
+  id            String       @default(cuid()) @id
+    price Int
+  imageUrl String
+  name String @unique @db.VarChar(40)
+  size String @db.VarChar(12)
+  description String @db.VarChar(300)
+  metal String @db.VarChar(60)
+  available Int
+}
+
+model Hitch {
+  id String @default(cuid()) @id
+    price Int
+  imageUrl String
+  name String @unique @db.VarChar(40)
+  size  String @db.VarChar(12)
+  description String @db.VarChar(300)
+  metal String @db.VarChar(60)
+  available Int @db.Integer
+}
+

@@ -1,16 +1,51 @@
 .productCard {
-  display: flex;
-  flex-direction: column;
-  width: min-content;
-  border: 2px solid black;
+  display: block;
+  padding: 10px;
+  box-shadow: 0 0 3px white;
+  border-radius: 10px;
+  transition: ease-in-out 0.3s;
+  background: black;
 }
 
-.productCard span {
-  margin: 0 auto;
+.productCard:hover {
+  transform: scale(1.05);
+  z-index: 3;
+}
+
+.productCardInfo {
+  font-size: 30px;
+}
+
+.productCardPrice {
+  font-size: 50px;
 }
 
 .productPicture {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-color: black;
+}
+
+.productProps {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.addToCart {
+  width: 100%;
+  background-color: inherit;
+  color: var(--fontColor);
+  border: 1px solid white;
+  font-size: 25px;
+  margin-top: 10px;
+  border-radius: 7px;
+  font-family: 'BebasNeue-Regular';
+  transition: ease-in-out 0.3s;
+}
+
+.addToCart:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 0 0 5px white;
 }

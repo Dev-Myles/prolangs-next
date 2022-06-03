@@ -17,7 +17,8 @@ export default function MobileNavbar() {
 
   const router = useRouter();
   const active = {
-    backgroundColor: 'purple',
+    boxShadow: '0 0 15px green',
+    backgroundColor: 'green',
   };
   return (
     <div>

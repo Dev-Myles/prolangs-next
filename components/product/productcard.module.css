@@ -1,0 +1,123 @@
+.productCard {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.productInfoTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.productInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productInfo span {
+  font-size: 40px;
+}
+
+.hr {
+  color: white;
+  width: 100%;
+}
+
+.price {
+  font-size: 80px;
+}
+
+.name {
+  font-size: 55px;
+}
+
+.desc {
+  font-size: 30px;
+  border-left: 1px solid white;
+  padding-left: 10px;
+}
+
+.imageWrap {
+  margin: 25px 0 25px 0;
+}
+
+.addButton {
+  background-color: inherit;
+  border: none;
+  box-shadow: 0 0 10px white;
+  color: var(--fontColor);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 0 25px 0 25px;
+  font-family: 'Teko-Light';
+  font-size: 50px;
+  transition: ease-in-out 0.3s;
+  display: flex;
+
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.addButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 999px) {
+  .productCard {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
+  .productInfoTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .productInfo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .imageWrap {
+    margin: 25px 50px 25px 0px;
+    width: 30vw;
+    border-right: 2px solid white;
+    padding-right: 50px;
+  }
+
+  .infoWrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: column;
+    width: 50vw;
+  }
+
+  .addButton {
+    background-color: inherit;
+    border: none;
+    box-shadow: 0 0 10px white;
+    color: var(--fontColor);
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 0 25px 0 25px;
+    font-family: 'Teko-Light';
+    font-size: 50px;
+    transition: ease-in-out 0.3s;
+    display: flex;
+
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+  }
+}

@@ -1,6 +1,81 @@
+.layout {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .buttons {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+}
+
+.storeLinks {
+  transition: ease-in-out 0.3s;
+}
+
+.storeLinks:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px green;
+}
+
+.productsBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.storeFilter {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  color: white;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
+.filterButton {
+  background-color: inherit;
+  box-shadow: 0 0 3px white;
+  border-radius: 7px;
+  padding: 3px 10px 3px 10px;
+  color: var(--fontColor);
+  transition: ease-in-out 0.3s;
+  font-size: 22px;
+  font-family: 'BebasNeue-Regular';
+}
+
+.filterButton:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.hr {
+  color: var(--fontColor);
+}
+
+.storeHeader {
+  font-family: 'BebasNeue-Regular';
+  font-size: 82px;
+  border-bottom: 2px solid white;
+  margin-bottom: 0;
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 999px) {
+  .layout {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .productsBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .storeHeader {
+    font-size: 52px;
+  }
 }
