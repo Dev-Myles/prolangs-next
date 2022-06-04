@@ -20,6 +20,7 @@ export default function MobileGallery() {
         stopOnHover={true}
         swipeable={true}
         showStatus={false}
+        showThumbs={false}
       >
         <div className={styles.mobileGalleryImage}>
           {' '}

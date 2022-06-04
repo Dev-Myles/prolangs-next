@@ -34,6 +34,7 @@ export default function DesktopGallery() {
         infiniteLoop={true}
         stopOnHover={true}
         swipeable={true}
+        showThumbs={false}
       >
         <div className={styles.gallerySection}>
           <div className={styles.galleryImage}>
