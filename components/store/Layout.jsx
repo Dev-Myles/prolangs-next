@@ -52,7 +52,13 @@ export default function StoreLayout({ props }) {
   function mapHitches() {
     return hitches.map((hitch) => {
       return (
-        <Link key={uuidv4()} href={`/product/${hitch.id}`}>
+        <Link
+          key={uuidv4()}
+          href={{
+            pathname: `/product/${hitch.id}`,
+            query: { id: hitch.id, cata: 'HITCH' },
+          }}
+        >
           <a>
             <ProductCard
               key={uuidv4()}
@@ -69,7 +75,13 @@ export default function StoreLayout({ props }) {
   function mapSigns() {
     return signs.map((sign) => {
       return (
-        <Link key={uuidv4()} href={`/product/${sign.id}`}>
+        <Link
+          key={uuidv4()}
+          href={{
+            pathname: `/product/${sign.id}`,
+            query: { id: sign.id, cata: 'SIGN' },
+          }}
+        >
           <a>
             <ProductCard
               key={uuidv4()}

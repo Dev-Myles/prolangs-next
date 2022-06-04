@@ -1,5 +1,10 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import styles from './productcard.module.css';
+
+const Button = dynamic(() => import('../buttons/AddToCart'), {
+  ssr: false,
+});
 
 export default function ProductCard({
   price,
@@ -10,43 +15,53 @@ export default function ProductCard({
   metal,
   fabric,
   description,
-  color,
 }) {
-  return (
-    <div className={styles.productCard}>
-      <h1 className={styles.name}>{name}</h1>
-      <div className={styles.imageWrap}>
-        <span></span>
-        <Image
-          src={imageUrl}
-          alt="product picture"
-          width={900}
-          height={900}
-          layout="responsive"
-        />
-      </div>
-      <div className={styles.infoWrap}>
-        <div className={styles.productInfoTop}>
-          <span className={styles.price}>${price}</span>
-        </div>
-        <div className={styles.productInfo}>
-          <span>Size:</span>
-          <span>
-            {size} {sizes}
-          </span>
-        </div>
-        <div className={styles.productInfo}>
-          <span>Material:</span>
-          <span>
-            {fabric} {metal}
-          </span>
-        </div>
+  let item = {
+    price,
+    imageUrl,
+    name,
+    size,
+    sizes,
+  };
 
-        <div className={styles.productInfoBottom}>
-          <p className={styles.desc}>{description}</p>
+  return (
+    <>
+      {' '}
+      <h1 className={styles.name}>{name}</h1>
+      <div className={styles.productCard}>
+        <div className={styles.imageWrap}>
+          <Image
+            src={imageUrl}
+            alt="product picture"
+            width={600}
+            height={600}
+            layout="responsive"
+          />
         </div>
-        <button className={styles.addButton}>Add to Cart</button>
+        <div className={styles.infoWrap}>
+          <div className={styles.productInfo}>
+            <span>Price:</span>
+            <span className={styles.price}>${price}</span>
+          </div>
+          <div className={styles.productInfo}>
+            <span>Size:</span>
+            <span>
+              {size} {sizes}
+            </span>
+          </div>
+          <div className={styles.productInfo}>
+            <span>Material:</span>
+            <span>
+              {fabric} {metal}
+            </span>
+          </div>
+
+          <div className={styles.productInfoBottom}>
+            <p className={styles.desc}>{description}</p>
+          </div>
+          <Button price={price} imageUrl={imageUrl} name={name} sizes={sizes} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

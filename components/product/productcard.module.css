@@ -31,7 +31,10 @@
 }
 
 .name {
-  font-size: 55px;
+  font-size: 65px;
+  border-bottom: 2px solid white;
+  text-shadow: 4px 1px rgb(24, 24, 24);
+  margin-top: 10px;
 }
 
 .desc {
@@ -68,6 +71,15 @@
 }
 
 @media only screen and (min-width: 999px) {
+  .name {
+    font-size: 100px;
+    margin-top: 0;
+  }
+
+  .desc {
+    font-size: 40px;
+  }
+
   .productCard {
     display: flex;
     justify-content: center;
@@ -88,11 +100,17 @@
     justify-content: space-between;
   }
 
+  .productInfo span {
+    font-size: 55px;
+  }
+
   .imageWrap {
     margin: 25px 50px 25px 0px;
-    width: 30vw;
-    border-right: 2px solid white;
-    padding-right: 50px;
+    background-color: rgb(7, 7, 7);
+    border-radius: 20px;
+    box-shadow: 0 0 10px white;
+    padding: 50px;
+    flex-grow: 0.5;
   }
 
   .infoWrap {
@@ -100,7 +118,9 @@
     justify-content: space-around;
     align-items: stretch;
     flex-direction: column;
-    width: 50vw;
+    flex-grow: 0.3;
+    border-left: 2px solid white;
+    padding-left: 30px;
   }
 
   .addButton {
