@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './productcard.module.css';
 
 const Button = dynamic(() => import('../buttons/AddToCart'), {
@@ -59,7 +60,13 @@ export default function ProductCard({
           <div className={styles.productInfoBottom}>
             <p className={styles.desc}>{description}</p>
           </div>
-          <Button price={price} imageUrl={imageUrl} name={name} sizes={sizes} />
+          <Button
+            cartId={uuidv4()}
+            price={price}
+            imageUrl={imageUrl}
+            name={name}
+            sizes={sizes}
+          />
         </div>
       </div>
     </>

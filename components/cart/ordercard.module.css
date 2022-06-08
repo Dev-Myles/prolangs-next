@@ -1,0 +1,63 @@
+.orderSlice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 23px;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+
+  font-family: 'RobotoMono-Regular';
+}
+
+.imageWrap {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  margin-right: 20px;
+}
+
+.pic {
+  margin: 0 auto;
+}
+
+.itemInfo {
+  flex-grow: 1;
+}
+
+.topItemSlice {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.bottomItemSlice {
+  text-align: right;
+}
+
+.equation {
+  border-bottom: 1px solid white;
+}
+
+.clearCartWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.deleteButtonWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.name {
+  font-size: 25px;
+  font-family: 'RobotoMono-Regular';
+}
+
+.cartHeader {
+  font-size: 100px;
+  margin: 0;
+}

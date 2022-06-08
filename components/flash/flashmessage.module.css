@@ -4,7 +4,6 @@
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  height: 50px;
 }
 
 .xButton {
@@ -17,4 +16,60 @@
 
 .xButton:hover {
   cursor: pointer;
+}
+
+.flashWarning {
+  z-index: 5;
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+  transition: ease-in-out 0.5s;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.flashWarningNo,
+.flashWarningYes {
+  background-color: inherit;
+  color: var(--fontColor);
+  border: none;
+  font-size: 21px;
+  font-family: 'RobotoMono-Regular';
+  padding: 0px 15px 0px 15px;
+  transition: ease-in-out 0.3s;
+}
+
+.flashWarningNo:hover,
+.flashWarningYes:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.flashWarningNo:hover {
+  text-shadow: 0px 0px 25px green;
+  color: green;
+}
+
+.flashWarningYes:hover {
+  text-shadow: 0px 0px 25px red;
+  color: red;
 }

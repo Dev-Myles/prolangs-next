@@ -37,6 +37,11 @@ html {
   src: url('../public/fonts/Lato-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'RobotoMono-Regular';
+  src: url('../public/fonts/RobotoMono-Regular.ttf');
+}
+
 a {
   color: inherit;
   text-decoration: none;
