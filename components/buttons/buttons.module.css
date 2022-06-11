@@ -1,10 +1,9 @@
 .deleteFromCart {
   transition: ease-in-out 0.3s;
-  background-color: inherit;
+  background-color: black;
   border: none;
   color: white;
-  font-size: 30px;
-  height: 43px;
+  font-size: 34px;
 }
 
 .deleteFromCart:hover {
@@ -12,12 +11,13 @@
   transform: scale(1.05);
 }
 
-.clearCart {
+.clearCart,
+.checkout {
   background-color: inherit;
   border: 2px solid white;
   border-radius: 15px;
   padding: 10px;
-
+  width: fit-content;
   color: white;
 
   font-size: 29px;
@@ -36,7 +36,7 @@
 
 .warningWrap {
   display: flex;
-  z-index: 5;
+  background-color: black;
   position: relative;
   margin-top: 15px;
   flex-direction: row;

@@ -11,20 +11,13 @@ export default function ProductCard({
   price,
   imageUrl,
   name,
-  size,
   sizes,
   metal,
   fabric,
   description,
 }) {
-  let item = {
-    price,
-    imageUrl,
-    name,
-    size,
-    sizes,
-  };
-
+  const amount = 1;
+  const size = 'M';
   return (
     <>
       {' '}
@@ -66,6 +59,8 @@ export default function ProductCard({
             imageUrl={imageUrl}
             name={name}
             sizes={sizes}
+            size={size}
+            amount={amount}
           />
         </div>
       </div>

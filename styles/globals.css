@@ -17,6 +17,7 @@ body {
   --darkPrimary: #222222;
   --success-text: #4f8a10;
   --error-text: #d8000c;
+  --rbg-green: #2ed822;
 }
 html {
   scroll-behavior: smooth;
@@ -40,6 +41,10 @@ html {
 @font-face {
   font-family: 'RobotoMono-Regular';
   src: url('../public/fonts/RobotoMono-Regular.ttf');
+}
+
+.react-icons {
+  vertical-align: middle;
 }
 
 a {

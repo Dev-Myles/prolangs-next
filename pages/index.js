@@ -7,7 +7,6 @@ import { createCart } from '../lib/session/addToCart';
 export default function HomePage() {
   useEffect(() => {
     createCart();
-    console.log(window.sessionStorage.getItem('cart'));
   }, []);
   return (
     <>

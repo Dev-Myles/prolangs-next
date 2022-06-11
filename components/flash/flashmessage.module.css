@@ -22,12 +22,15 @@
   z-index: 5;
   background-color: inherit;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-size: 30px;
+  font-size: 22px;
   transition: ease-in-out 0.5s;
   animation: fadeIn 0.7s;
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 @keyframes fadeIn {
