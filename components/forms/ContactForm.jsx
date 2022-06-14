@@ -82,7 +82,7 @@ export default function ContactForm() {
             />
           )}
           <div className={styles.inputWrap}>
-            <label>First name</label>
+            <label htmlFor="firstname">First name</label>
             <input
               name="firstname"
               className={styles.textInput}
@@ -97,7 +97,7 @@ export default function ContactForm() {
             {errors.name && <span>Please enter a valid first name</span>}
           </div>
           <div className={styles.inputWrap}>
-            <label>Last name</label>
+            <label htmlFor="lastname">Last name</label>
             <input
               name="lastname"
               className={styles.textInput}
@@ -112,7 +112,7 @@ export default function ContactForm() {
             {errors.lastname && <span>Please enter a valid last name</span>}
           </div>
           <div className={styles.inputWrap}>
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
               name="email"
               className={styles.emailInput}
@@ -132,7 +132,7 @@ export default function ContactForm() {
             )}
           </div>
           <div className={styles.inputWrap}>
-            <label>Subject</label>
+            <label htmlFor="subject">Subject</label>
             <input
               name="subject"
               className={styles.textInput}
@@ -147,7 +147,7 @@ export default function ContactForm() {
             {errors.subject && <span>Please enter a valid subject</span>}
           </div>
           <div className={styles.inputWrap}>
-            <label>Message</label>
+            <label htmlFor="message">Message</label>
             <textarea
               name="message"
               className={styles.messageInput}

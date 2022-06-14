@@ -1,12 +1,9 @@
-// import dynamic from 'next/dynamic';
-// const OrderCard = dynamic(() => import('../components/cart/OrderCard'), {
-//   ssr: false,
-// });
+import Layout from '../components/checkout/Layout';
 
 export default function Checkout() {
   return (
     <>
-      <h1>Working</h1>
+      <Layout />
     </>
   );
 }

@@ -1,8 +1,9 @@
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { v4 as uuidv4 } from 'uuid';
+import { createCart } from '../../lib/session/addToCart';
 import styles from './ordercard.module.css';
 
 const ClearCart = dynamic(() => import('../buttons/ClearCart'), {
@@ -14,9 +15,13 @@ const OrderItem = dynamic(() => import('./OrderItem'), {
 });
 
 export default function OrderCard() {
+  createCart();
+
   const [isCart, setCart] = useState(orderList);
   const sess = window.sessionStorage;
-  const orderList = JSON.parse(sess.getItem('cart'));
+  const orderList = sess.getItem('cart')
+    ? JSON.parse(sess.getItem('cart'))
+    : [];
   const totalPrice = pushPrices(orderList).totalPrice;
   const totalItems = pushPrices(orderList).totalItems;
   const router = useRouter();
@@ -33,14 +38,21 @@ export default function OrderCard() {
   function pushPrices(orderList) {
     const total = [];
     const totalItems = [];
-    orderList.forEach((item) => {
-      total.push(item.price * item.amount);
-      totalItems.push(item.amount);
-    });
-    return {
-      totalPrice: total.reduce((i, c) => i + c, 0),
-      totalItems: totalItems.reduce((i, c) => i + c, 0),
-    };
+    if (orderList) {
+      orderList.forEach((item) => {
+        total.push(item.price * item.amount);
+        totalItems.push(item.amount);
+      });
+    }
+    return orderList
+      ? {
+          totalPrice: total.reduce((i, c) => i + c, 0),
+          totalItems: totalItems.reduce((i, c) => i + c, 0),
+        }
+      : {
+          totalPrice: 0,
+          totalItems: 0,
+        };
   }
 
   function cartChange() {
@@ -65,6 +77,8 @@ export default function OrderCard() {
       );
     });
   }
+
+  useEffect(() => {}, [isCart]);
 
   const font = {
     fontSize: '50px',

@@ -2,6 +2,8 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './productcard.module.css';
+import { ChangeQty, ChangeSize } from './ItemModifiers';
+import { useState } from 'react';
 
 const Button = dynamic(() => import('../buttons/AddToCart'), {
   ssr: false,
@@ -11,13 +13,35 @@ export default function ProductCard({
   price,
   imageUrl,
   name,
-  sizes,
-  metal,
-  fabric,
+  size,
+  material,
   description,
+  amount = 1,
 }) {
-  const amount = 1;
-  const size = 'M';
+  const item = {
+    price,
+    imageUrl,
+    name,
+    size,
+    material,
+    description,
+    amount,
+  };
+
+  const [isCart, setCart] = useState(item);
+
+  function changeSize(size) {
+    const newItem = { ...isCart };
+    newItem.size = size;
+    return setCart(newItem);
+  }
+
+  function changeQty(qty) {
+    const newItem = { ...isCart };
+    newItem.amount = qty;
+    return setCart(newItem);
+  }
+
   return (
     <>
       {' '}
@@ -35,32 +59,38 @@ export default function ProductCard({
         <div className={styles.infoWrap}>
           <div className={styles.productInfo}>
             <span>Price:</span>
-            <span className={styles.price}>${price}</span>
+            <span className={styles.price}>${isCart.price}</span>
           </div>
           <div className={styles.productInfo}>
             <span>Size:</span>
-            <span>
-              {size} {sizes}
+            <span className={styles.itemMod}>
+              <ChangeSize changeSize={changeSize} />
+              {isCart.size}
             </span>
           </div>
           <div className={styles.productInfo}>
             <span>Material:</span>
-            <span>
-              {fabric} {metal}
+            <span>{isCart.material}</span>
+          </div>
+          <div className={styles.productInfo}>
+            <span> Qty:</span>
+
+            <span className={styles.itemMod}>
+              <ChangeQty changeQty={changeQty} />
+              {isCart.amount}
             </span>
           </div>
 
           <div className={styles.productInfoBottom}>
-            <p className={styles.desc}>{description}</p>
+            <p className={styles.desc}>{isCart.description}</p>
           </div>
           <Button
             cartId={uuidv4()}
-            price={price}
-            imageUrl={imageUrl}
-            name={name}
-            sizes={sizes}
-            size={size}
-            amount={amount}
+            name={isCart.name}
+            imageUrl={isCart.imageUrl}
+            size={isCart.size}
+            amount={isCart.amount}
+            price={isCart.price}
           />
         </div>
       </div>

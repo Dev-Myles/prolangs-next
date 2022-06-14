@@ -14,7 +14,9 @@
 
 .productInfo {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
 .productInfo span {
@@ -70,6 +72,14 @@
   cursor: pointer;
 }
 
+.itemMod {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  height: 25px;
+}
+
 @media only screen and (min-width: 999px) {
   .name {
     font-size: 100px;
@@ -121,6 +131,7 @@
     flex-grow: 0.3;
     border-left: 2px solid white;
     padding-left: 30px;
+    position: relative;
   }
 
   .addButton {

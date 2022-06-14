@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -6,6 +7,10 @@ import { IconContext } from 'react-icons';
 import { AiOutlineMenu, AiOutlineShoppingCart } from 'react-icons/ai';
 import DrawerNav from './DrawerNav';
 import styles from './mobilenavbar.module.css';
+
+const CartCount = dynamic(() => import('./CartCount'), {
+  ssr: false,
+});
 
 export default function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,6 +70,7 @@ export default function MobileNavbar() {
                   className={styles.images}
                   onClick={() => setIsOpen(false)}
                 >
+                  <CartCount />
                   <IconContext.Provider value={{ className: 'images' }}>
                     <div
                       className={styles.iconCenter}

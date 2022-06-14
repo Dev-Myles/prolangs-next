@@ -1,38 +1,20 @@
-import ProductCard from './ProductCard';
+import dynamic from 'next/dynamic';
+
+const ProductCard = dynamic(() => import('./ProductCard'), {
+  ssr: false,
+});
 
 export default function Layout({ props }) {
-  const {
-    price,
-    imageUrl,
-    name,
-    sizes = null,
-    colors = null,
-    description,
-    fabric = null,
-    size = null,
-    metal = null,
-  } = props;
-
-  let shirtsize =
-    sizes == undefined
-      ? null
-      : sizes.reduce((prev, curr) => [prev, ', ', curr]);
-  let color =
-    colors == undefined
-      ? null
-      : colors.reduce((prev, curr) => [prev, ', ', curr]);
+  const { price, imageUrl, name, description, material, size = null } = props;
 
   return (
     <ProductCard
       price={price}
       imageUrl={imageUrl}
       name={name}
-      sizes={shirtsize}
       size={size}
-      metal={metal}
-      fabric={fabric}
+      material={material}
       description={description}
-      color={color}
     />
   );
 }

@@ -1,7 +1,12 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './desktopnavbar.module.css';
+
+const CartCount = dynamic(() => import('./CartCount'), {
+  ssr: false,
+});
 
 export default function DesktopNavbar() {
   const router = useRouter();
@@ -81,6 +86,7 @@ export default function DesktopNavbar() {
                   style={router.pathname == '/cart' ? active : null}
                   className={styles.images}
                 >
+                  <CartCount />
                   <Image
                     src="/icons/cart.svg"
                     alt="cart icon"

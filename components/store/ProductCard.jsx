@@ -4,18 +4,13 @@ import styles from './productcard.module.css';
 export default function ProductCard({
   name,
   price,
-  sizes,
+
   colors,
   description,
-  fabric,
+  material,
   imageUrl,
   size,
-  metal,
 }) {
-  let shirtsize =
-    sizes == undefined
-      ? null
-      : sizes.reduce((prev, curr) => [prev, ', ', curr]);
   let color =
     colors == undefined
       ? null
@@ -32,11 +27,9 @@ export default function ProductCard({
       <hr />
       <div className={styles.productProps}>
         <span className={styles.productCardInfo}>{name}</span>
-        <span className={styles.productCardInfo}>{shirtsize}</span>
         <span className={styles.productCardInfo}>{color}</span>
         <span className={styles.productCardInfo}>{description}</span>
-        <span className={styles.productCardInfo}>{fabric}</span>
-        <span className={styles.productCardInfo}>{metal}</span>
+        <span className={styles.productCardInfo}>{material}</span>
         <span className={styles.productCardInfo}>{size}</span>
         <span className={styles.productCardPrice}>${price}</span>
         <button className={styles.addToCart}>View</button>
