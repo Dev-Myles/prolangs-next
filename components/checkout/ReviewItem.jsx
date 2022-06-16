@@ -5,6 +5,7 @@ export default function ReviewItem({ name, imageUrl, price, amount, size }) {
   return (
     <div className={styles.itemWrap}>
       <div className={styles.imageWrap}>
+        <span>{name}</span>
         <Image
           className={styles.pic}
           src={imageUrl}
@@ -14,11 +15,22 @@ export default function ReviewItem({ name, imageUrl, price, amount, size }) {
           layout="fixed"
         />
       </div>
-      <span>{name}</span>
-      <span>{size}</span>
-      <span>{amount}</span>
-      <span>{price}</span>
-      <span>{amount * price}</span>
+      <div className={styles.itemInfo}>
+        <span>SIZE</span>
+        <span>{size}</span>
+      </div>
+      <div className={styles.itemInfo}>
+        <span>QTY</span>
+        <span>{amount}</span>
+      </div>
+      <div className={styles.itemInfo}>
+        <span>PRICE</span>
+        <span>${price}</span>
+      </div>
+      <div className={styles.itemInfo}>
+        <span>TOTAL</span>
+        <span>${amount * price}</span>
+      </div>
     </div>
   );
 }

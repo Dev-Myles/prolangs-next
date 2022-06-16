@@ -7,8 +7,7 @@ export default async function sendMessage(req, res) {
 
     let transporter = nodemailer.createTransport({
       service: 'gmail',
-      port: 587,
-      secure: false, // true for 465, false for other ports
+
       auth: {
         user: process.env.NODE_MAILER_EMAIL,
         pass: process.env.NODE_MAILER_PASSWORD,

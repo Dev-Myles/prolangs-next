@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import ReviewItem from './ReviewItem';
+import styles from './reviewitem.module.css';
 
 export default function Review() {
   const sess = window.sessionStorage;
@@ -47,9 +48,9 @@ export default function Review() {
   return (
     <div>
       {mapOrder()}
-      <div>
+      <div className={styles.totalsWrap}>
         <span>Total Items: {totalItems}</span>
-        <span>Total Price: {totalPrice}</span>
+        <span>Total Price: ${totalPrice}</span>
       </div>
     </div>
   );
