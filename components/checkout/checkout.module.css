@@ -3,3 +3,28 @@
   margin: 0;
   border-bottom: 2px solid white;
 }
+
+.buttonsWrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 92vw;
+  text-align: center;
+  flex-direction: column;
+}
+
+.paymentWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorMessage {
+  color: var(--error-text);
+  font-size: 32px;
+}
+
+.orderMessage {
+  color: var(--success-text);
+  font-size: 32px;
+}

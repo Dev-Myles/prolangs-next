@@ -8,15 +8,14 @@ export default function Payment() {
   const font = {
     fontFamily: 'RobotoMono-Regular',
     textAlign: 'center',
+    fontSize: '30px',
   };
 
   return (
-    <div>
-      <div className={styles.paymentWrap}>
-        <h2 className={styles.paymentHeader}>Select Method</h2>
-        <h3 style={font}>Order placed on payment completion</h3>
-        <PaymentOptions />
-      </div>
+    <div className={styles.paymentWrap}>
+      <h2 className={styles.paymentHeader}>Select Method</h2>
+      <h3 style={font}>Order placed on payment completion</h3>
+      <PaymentOptions />
     </div>
   );
 }
