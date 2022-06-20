@@ -9,6 +9,9 @@ export default function Footer() {
         <Link href="/contact">
           <a className={styles.images}>Contact</a>
         </Link>
+        <Link href="/policy">
+          <a className={styles.images}>Policy</a>
+        </Link>
 
         <Link href="https://www.instagram.com/rock_bottom_guild/">
           <a className={styles.images}>
