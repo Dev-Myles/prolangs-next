@@ -4,7 +4,6 @@ import styles from './productcard.module.css';
 export default function ProductCard({
   name,
   price,
-
   colors,
   description,
   material,

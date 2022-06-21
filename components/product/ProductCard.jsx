@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { v4 as uuidv4 } from 'uuid';
-import styles from './productcard.module.css';
-import { ChangeQty, ChangeSize } from './ItemModifiers';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { ChangeQty, ChangeSize } from './ItemModifiers';
+import styles from './productcard.module.css';
 
 const Button = dynamic(() => import('../buttons/AddToCart'), {
   ssr: false,
@@ -42,6 +42,8 @@ export default function ProductCard({
     return setCart(newItem);
   }
 
+  const sizeChange = size.length > 3 ? false : true;
+
   return (
     <>
       {' '}
@@ -64,7 +66,8 @@ export default function ProductCard({
           <div className={styles.productInfo}>
             <span>Size:</span>
             <span className={styles.itemMod}>
-              <ChangeSize changeSize={changeSize} />
+              {sizeChange ? <ChangeSize changeSize={changeSize} /> : null}
+
               {isCart.size}
             </span>
           </div>

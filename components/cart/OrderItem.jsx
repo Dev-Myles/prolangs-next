@@ -12,9 +12,9 @@ export default function OrderItem({
   fn,
   cartChange,
   amount,
-
   size,
 }) {
+  const sizeChange = size.length > 3 ? false : true;
   return (
     <div className={styles.orderSlice}>
       <span className={styles.name}>
@@ -39,7 +39,9 @@ export default function OrderItem({
           <div className={styles.topItemSlice}>
             <span className={styles.sizeWrap}>
               SIZE: {size}{' '}
-              <ChangeSize cartChange={cartChange} cartId={cartId} />
+              {sizeChange ? (
+                <ChangeSize cartChange={cartChange} cartId={cartId} />
+              ) : null}
             </span>
           </div>
 

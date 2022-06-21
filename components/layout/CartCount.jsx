@@ -4,7 +4,7 @@ export default function CartCount() {
   const router = useRouter();
   const totalItems = [];
   const cart = JSON.parse(window.sessionStorage.getItem('cart'));
-  const cartAmounts = cart.forEach((item) => {
+  cart.forEach((item) => {
     totalItems.push(item.amount);
   });
   const cartCount = totalItems.reduce((i, c) => i + c, 0);
